@@ -42,6 +42,7 @@ def rollavg_bottlneck(a, n):
 
 @jit
 def klBern(x, y):
+    # Function extracted from the SMPBandits package from Lillian Besson https://github.com/SMPyBandits/SMPyBandits/
     x = min(max(x, eps), 1 - eps)
     y = min(max(y, eps), 1 - eps)
     return x * log(x / y) + (1 - x) * log((1 - x) / (1 - y))
@@ -49,6 +50,7 @@ def klBern(x, y):
 
 @jit
 def klucb(x, d, kl, upperbound, precision=1e-6, lowerbound=float('-inf'), max_iterations=50):
+    # Function extracted from the SMPBandits package from Lillian Besson https://github.com/SMPyBandits/SMPyBandits/
     r""" The generic KL-UCB index computation.
     - ``x``: value of the cum reward,
     - ``d``: upper bound on the divergence,
@@ -72,6 +74,7 @@ def klucb(x, d, kl, upperbound, precision=1e-6, lowerbound=float('-inf'), max_it
 
 @jit
 def klucbBern(x, d, precision=1e-6):
+    # Function extracted from the SMPBandits package from Lillian Besson https://github.com/SMPyBandits/SMPyBandits/
     """ KL-UCB index computation for Bernoulli distributions, using :func:`klucb`.
     """
     upperbound = min(1., klucbGauss(x, d, sig2x=0.25, precision=precision))  # variance 1/4 for [0,1] bounded distributions
@@ -80,6 +83,7 @@ def klucbBern(x, d, precision=1e-6):
 
 @jit
 def klucbGauss(x, d, sig2x=0.25):
+    # Function extracted from the SMPBandits package from Lillian Besson https://github.com/SMPyBandits/SMPyBandits/
     """ KL-UCB index computation for Gaussian distributions.
     """
     return x + sqrt(abs(2 * sig2x * d))
