@@ -1,5 +1,7 @@
 # LB-SDA
 
+<img align = "center", src = "fig/fig_readme.png" >
+
 # Description
 
 Code for the ICML 2021 "On Limited-Memory Subsampling Strategies for Bandits" paper.
