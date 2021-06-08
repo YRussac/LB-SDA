@@ -1,6 +1,6 @@
 # LB-SDA
 
-<img align = "center", src = "fig/fig_readme.png" >
+<img align = "center" src = "fig/fig_readme.png" >
 
 # Description
 
