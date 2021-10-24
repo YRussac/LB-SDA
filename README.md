@@ -13,4 +13,4 @@ The empirical performance of the algorithms are reported in the different notebo
 
 
 # Contact
-Please contact yoanrussac@ens.fr for any further information.
+Please contact yoan.russac@ens.fr for any further information.
